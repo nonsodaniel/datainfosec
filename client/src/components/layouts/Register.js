@@ -18,7 +18,10 @@ export default class Signup extends Component {
         console.log(this.state);
     };
     handleSubmit = (e) => {
-        let base_url = "http://localhost:4000/api"
+        let isDev = /localhost/.test(window.location.origin);
+        console.log("isdev", isDev)
+        let base_url = isDev ? "http://localhost:4000/api" : "https://datainfosec.herokuapp.com/api"
+
 
         e.preventDefault()
         let { fullname, email, dob, state, images, id } = this.state

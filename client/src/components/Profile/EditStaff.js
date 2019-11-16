@@ -13,7 +13,9 @@ export default class StaffDetails extends Component {
     }
 
     componentDidMount() {
-        let base_url = "http://localhost:4000/api"
+        let isDev = /localhost/.test(window.location.origin);
+        console.log("isdev", isDev)
+        let base_url = isDev ? "http://localhost:4000/api" : "https://datainfosec.herokuapp.com/api"
 
         let id = this.props.match.params.id;
         fetch(`${base_url}/admin/${id}`).then((response) => {

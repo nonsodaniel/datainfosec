@@ -63,7 +63,7 @@ module.exports = {
         let isEmail = await adminModel.findOne({ email });
         console.log(isEmail)
         if (!isEmail) {
-            return res.json({ status: "info", statuscode: 200, message: "This email doesn't exist", data: null })
+            return res.json({ status: "info", statuscode: 404, message: "This email doesn't exist", data: null })
         } else {
             return res.json({ status: "success", statuscode: 200, message: "Staff successfully found", data: isEmail })
         }

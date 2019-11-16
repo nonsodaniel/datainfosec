@@ -3,7 +3,7 @@ import './assets/Profile.css'
 
 export default class Profile extends Component {
     state = {
-        data: []
+        data: {}
     }
     componentDidMount() {
         let data = JSON.parse(localStorage.getItem("staff"))
@@ -11,7 +11,7 @@ export default class Profile extends Component {
         this.setState({ data })
     }
     render() {
-        let { fullname, dob, email, state } = this.state.data
+        // console.log("Wunmi", this.state.data.fullname)
         return (
             <>
                 <div className="container">
@@ -20,8 +20,8 @@ export default class Profile extends Component {
                             <div className="img-div mx-auto">
 
                             </div>
-                            <h5 className="text-center">{fullname}</h5>
-                            <h6 className="text-center">{email}</h6> <br />
+                            <h5 className="text-center">{this.state.data ? this.state.data.fullname : ""}</h5>
+                            <h6 className="text-center">{this.state.data ? this.state.data.email : ""}</h6> <br />
                         </div>
                         <div className="col-md-8 right-div">
                             <div className="top-right-div d-flex mx-auto">
@@ -31,9 +31,9 @@ export default class Profile extends Component {
                                     <li className="list-title">State of origin</li>
                                 </ul>
                                 <ul>
-                                    <li className="list-desc">{email}</li>
-                                    <li className="list-desc">{dob}</li>
-                                    <li className="list-desc">{state}</li>
+                                    <li className="list-desc">{this.state.data && this.state.data.email}</li>
+                                    <li className="list-desc">{this.state.data && this.state.data.dob}</li>
+                                    <li className="list-desc">{this.state.data && this.state.data.state}</li>
                                 </ul>
                             </div>
                             <div className="bottom-right-div mx-auto">

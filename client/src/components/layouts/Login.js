@@ -14,7 +14,9 @@ export default class Login extends Component {
         console.log(this.state);
     };
     handleSubmit = (e) => {
-        let base_url = "http://localhost:4000/api"
+        let isDev = /localhost/.test(window.location.origin);
+        console.log("isdev", isDev)
+        let base_url = isDev ? "http://localhost:4000/api" : "https://datainfosec.herokuapp.com/api"
 
         e.preventDefault()
         let { email } = this.state
@@ -56,8 +58,8 @@ export default class Login extends Component {
                         </form>
 
                         <div className="d-flex justify-content-center not-a-member">
-                            <div className="font-size-small">Not a member yet?</div>
-                            <div>Sign Up</div>
+                            <div className="font-size-small">Not a staff yet?</div>
+                            <Link to="/register"><button className="btn btn-primary">Sign Up</button></Link>
                         </div>
                     </div>
                 </section>

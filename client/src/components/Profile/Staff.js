@@ -21,7 +21,9 @@ export default class Staff extends Component {
 
     fetchAdmins = async () => {
 
-        let base_url = "http://localhost:4000/api"
+        let isDev = /localhost/.test(window.location.origin);
+        console.log("isdev", isDev)
+        let base_url = isDev ? "http://localhost:4000/api" : "https://datainfosec.herokuapp.com/api"
         await fetch(`${base_url}/admin/`).then((response) => {
             return response.json()
         }).then((adminData) => {
