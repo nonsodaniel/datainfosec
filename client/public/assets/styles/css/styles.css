@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    /* display: none; */
+}
+nav{
+    margin: 15px;
+}
+.navbar-brand{
+    padding: 0px 25px;
+    margin: -4px 0 0 0;
+}
+.list-container{
+    margin: 0px 0px 0px 40vw;
+}
+
+.login-container{
+    width: 50%;
+    margin-top: 80px;
+}
+.login-text{
+    transform: translateY(-40px);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form > input{
+    border-radius: 13px;
+}
+.btn-facebook, .btn-facebook:hover{
+    width: 10vw;
+    margin: 0px 11px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0px;
+    font-size: 14px;
+    border: none;
+    background: #3f51b5e0;
+} 
+.btn-google, .btn-google:hover{
+    width: 10vw;
+    margin: 0px 11px;
+    background: #dc3545;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0px;
+    font-size: 14px;
+    border: none;
+} 
+.login-text{
+    font-weight: 700;
+}
+.forgot-pwd-text{
+    font-size: 15px;
+    text-decoration: underline;
+    color: #e83e8cd9;
+}
+
+
+.btn-logIn, .btn-signUp{
+    width: 9vw;
+    height: 30px;
+    border-radius: 14px;
+    font-size: 13px;
+    padding: 0px; 
+}
+.nav-link{
+    font-size: 15px;
+    padding: 12px;
+}
+.btn-signUp{
+    width: 9vw;
+    height: 30px;
+    border-radius: 14px;
+    font-size: 13px;
+    padding: 0px; 
+    border: none;
+    outline: none;
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    margin: -4px 0 0 0;
+}
+.btn-logIn{
+    width: 9vw;
+    height: 30px;
+    border-radius: 14px;
+    font-size: 13px;
+    padding: 0px; 
+    border: none;
+    outline: none;
+    margin: -4px 0 0 0;
+}
+input{
+    outline: none;
+    border-radius: 10px;
+}
+.btn-login{
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    border: none;
+    border-radius: 20px;
+}
+.not-a-member {
+    font-size: 15px;
+}
+
+.not-a-member > div{
+    padding: 0px 10px;
+}
+.not-a-member > div:nth-child(2){
+    color: #f09819;
+}
+
+
+
+
+
+@media screen and (max-width: 990px) {
+   .login-container{
+       width: 100%;
+   }
+   .btn-google, .btn-facebook{
+    width: 40%;
+   }
+   .list-container{
+    margin: 0px;
+}
+.btn-logIn, .btn-signUp{
+    width: 40%;
+}
+}

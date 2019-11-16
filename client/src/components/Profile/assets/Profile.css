@@ -1,0 +1,53 @@
+.left-div{
+    /* border: 1px solid red; */
+}
+
+.right-div{
+    /* border: 1px solid green; */
+}
+
+.img-div{
+    border-radius: 95px;
+    border: 1px solid black;
+    height: 30vh;
+    width: 14vw;
+    margin: 50px 0px 30px 0px;
+}
+
+.top-right-div {
+    /* border: 1px solid red; */
+    width: 85%;
+    justify-content: space-around;
+    margin: 60px 0px;
+
+}
+.top-right-div > ul{
+    list-style-type: none;
+}
+.list-title{
+    font-weight: 800;
+    font-size: 17px;
+}
+
+.list-desc{
+
+}
+
+.bottom-right-div{
+    /* border: 1px solid red; */
+    width: 85%;
+}
+
+.staff-photo{
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    /* height: 50%; */
+    width: 100%;
+}
+.action-btn{
+    border-radius: 50px; 
+}
+
+.add-staff-btn{
+    transform: translateY(81px);
+}
