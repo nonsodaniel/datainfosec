@@ -154,6 +154,7 @@ input{
 @media screen and (max-width: 990px) {
    .login-container{
        width: 100%;
+       transform: translateY(100px);
    }
    .btn-google, .btn-facebook{
     width: 40%;
