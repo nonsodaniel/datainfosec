@@ -25,9 +25,9 @@ nav{
     background-size: cover;
     background-position: center;
 }
-.list-container{
+/* .list-container{
     margin: 0px 0px 0px 35vw;
-}
+} */
 
 .login-container{
     width: 50%;
@@ -44,13 +44,21 @@ form{
 form > input{
     border-radius: 13px;
 }
+.form-div-label{
+    margin-right: 20vw;
+    margin-bottom: 13px;
+    /* margin: 2vh; */
+    margin-top: 4px;
+    font-weight: 800;
+
+}
 
 .btn:focus,.btn:active {
     outline: none !important;
     box-shadow: none;
  }
  .shadow-none{
-     border-radius: 10px;
+     /* border-radius: 10px; */
  }
 
 .login-text{
@@ -106,6 +114,9 @@ form > input{
     margin: -4px 0 0 0;
 }
 
+.btn-auth{
+    transform: translateY(-11px);
+}
 
 input{
     outline: none;
@@ -153,6 +164,13 @@ input{
 .logo{
     width: 45vw;
     transform: translateX(-28px);
+}
+.form-div-label {
+    margin-right: 65vw;
+    margin-bottom: 13px;
+    /* margin: 2vh; */
+    margin-top: 4px;
+    font-weight: 800;
 }
 
 }

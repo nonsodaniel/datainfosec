@@ -39,7 +39,9 @@ export default class Login extends Component {
                     localStorage.setItem("staff", JSON.stringify(response.data))
                     swal("Response", "Login Successful", "success");
                     setTimeout(this.props.history.push('/staff'), 2000)
-
+                } else if (response.statuscode === 404) {
+                    const bold = `<b>${email}</b>`
+                    return swal("Response", `The Email does not exist! Please recheck and try again`, "failed")
                 } else {
                     return swal("Response", "An error occured! Please recheck and try again", "failed")
                 }
@@ -59,7 +61,7 @@ export default class Login extends Component {
 
                         <div className="d-flex justify-content-center not-a-member">
                             <div className="font-size-small">Not a staff yet?</div>
-                            <Link to="/register"><button className="btn btn-primary">Sign Up</button></Link>
+                            <Link to="/register" className="btn-auth"><button className="btn btn-primary">Sign Up</button></Link>
                         </div>
                     </div>
                 </section>

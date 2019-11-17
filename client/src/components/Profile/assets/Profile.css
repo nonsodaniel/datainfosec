@@ -5,15 +5,22 @@
 .right-div{
     /* border: 1px solid green; */
 }
-
+.profile-container{
+    transform: translateY(60px);
+}
 .img-div{
     border-radius: 95px;
-    border: 1px solid black;
     height: 30vh;
     width: 14vw;
     margin: 50px 0px 30px 0px;
 }
-
+.left-div > h5{
+    font-weight: 900;
+    font-size: 30px;
+}
+.left-div > h6{
+    font-size: 17px;
+}
 .top-right-div {
     /* border: 1px solid red; */
     width: 85%;
@@ -34,7 +41,7 @@
 }
 
 .bottom-right-div{
-    /* border: 1px solid red; */
+    margin-top: -22px;
     width: 85%;
 }
 
@@ -42,7 +49,9 @@
     border-radius: 50%;
     /* border: 1px solid red; */
     /* height: 50%; */
-    width: 100%;
+    /* width: 100%; */
+    height: 11%;
+    width: 28%;
 }
 .action-btn{
     border-radius: 50px; 
@@ -51,3 +60,44 @@
 .add-staff-btn{
     transform: translateY(81px);
 }
+.profile-description{
+    padding: 30px 0px;
+}
+.profile-title-right{
+    transform: translateY(20px);
+}
+
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.ul-desc{
+    transform: translateX(18px);
+}
+
+
+@media screen and (max-width: 990px) {
+    .add-staff-btn{
+        transform: translateX(176px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* "https://res.cloudinary.com/chukwuma/image/upload/v1573871541/ihvfhgefagmmuvi5ouyh.png"  
+
+https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg */

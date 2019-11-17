@@ -24,10 +24,10 @@ export default class Signup extends Component {
 
 
         e.preventDefault()
-        let { fullname, email, dob, state, images, id } = this.state
+        let { fullname, email, dob, state, image } = this.state
 
-        let obj = { fullname, email, dob, state, images };
-        console.log("obj", obj, this.state);
+        let obj = { fullname, email, dob, state, image };
+        // console.log("obj", obj, this.state);
 
         fetch(`${base_url}/admin/register`, {
             method: "POST",
@@ -39,7 +39,7 @@ export default class Signup extends Component {
             return res.json()
         })
             .then((response) => {
-                console.log("Update response", response)
+                console.log("Create response", response)
                 if (response.statuscode === 200) {
                     localStorage.setItem("staff", JSON.stringify(response.data))
                     swal("Response", "Successfully Created a Staff", "success");
@@ -78,19 +78,31 @@ export default class Signup extends Component {
                 <section className="login">
                     <div className="container login-container">
                         <h2 className="text-center login-text">Sign Up</h2>
-                        <form className="form mx-auto">
-                            <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="fullname" placeholder="Fullname" onChange={this.handleChange} /><br />
-                            <input type="email" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="email" placeholder="email" onChange={this.handleChange} /><br />
-                            <input type="date" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="dob" placeholder="Date of Birth" onChange={this.handleChange} /><br />
-                            <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="state" placeholder="State of origin" onChange={this.handleChange} /><br />
-                            <input type="file" accept="image/*" className="form-control mb-2 mr-sm-2 col-md-7" id="images" placeholder="City" onChange={this.previewFile} />
-                            <img src="" height="200" id="image-box" alt="" className="mb-4" />
-                            <button className="col-md-7 btn btn-primary btn-login" onClick={this.handleSubmit}>Create</button><br />
-                        </form>
+                        <div className="form-div">
+                            <form className="form  form-group">
+                                <label className="form-div-label">Fullname: <b className="label-important text-danger">*</b></label>
+                                <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="fullname" placeholder="Fullname" onChange={this.handleChange} />
+
+                                <label className="form-div-label"> Email: <b className="label-important text-danger">*</b></label>
+                                <input type="email" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="email" placeholder="email" onChange={this.handleChange} />
+
+                                <label className="form-div-label">Date of Birth <b className="label-important text-danger">*</b></label>
+                                <input type="date" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="dob" placeholder="Date of Birth" onChange={this.handleChange} />
+
+                                <label className="form-div-label">State of origin <b className="label-important text-danger">*</b></label>
+                                <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " id="state" placeholder="State of origin" onChange={this.handleChange} />
+
+                                <label className="form-div-label">City <b className="label-important text-danger">*</b></label>
+                                <input type="file" accept="image/*" className="form-control mb-2 mr-sm-2 col-md-7" id="images" placeholder="City" onChange={this.previewFile} />
+                                <img src="" height="150" id="image-box" alt="" className="mb-4 border" />
+                                <button className="col-md-7 btn btn-primary btn-login" onClick={this.handleSubmit}>Create</button><br />
+                            </form>
+                        </div>
+
 
                         <div className="d-flex justify-content-center not-a-member">
-                            <div className="font-size-small">Not a member yet?</div>
-                            <div>Sign Up</div>
+                            <div className="font-size-small">Already a Staff?</div>
+                            <Link to="/login" className="btn-auth"><button className="btn btn-primary">Sign In</button></Link>
                         </div>
                     </div>
                 </section>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './assets/css/style.css'
 import { Link, withRouter } from 'react-router-dom'
+import { SignedOutNav } from './navs/SignedOutNav'
+import { SignedInNav } from './navs/SignedInNav'
 
 
 class Navbar extends Component {
@@ -22,7 +24,9 @@ class Navbar extends Component {
     this.props.history.push('/register')
   }
   render() {
-    console.log("love", this.state.data)
+    let localData = localStorage.getItem("staff");
+    let Links = localData ? <SignedInNav logout={this.handleLogout} /> : <SignedOutNav />
+    // console.log("Links", Links)
     return (
       <React.Fragment>
 
@@ -37,48 +41,28 @@ class Navbar extends Component {
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
               <div className="list-container">
 
                 <ul className="navbar-nav">
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <Link to="/" className="nav-link">Profile</Link>
                   </li>
                   <li className="nav-item">
                     <Link to="/staff" className="nav-link">Staff</Link>
                   </li>
-                  {
-                    !this.state.data ? (
-                      (
-                        <React.Fragment>
-                          <li className="nav-item">
-                            <Link to="/login" className="nav-link"><button className="btn  btn-logIn border text-dark bg-white">LOG IN</button></Link>
-                          </li>
-                          <li className="nav-item">
-                            <Link to="/register" className="nav-link"><button className="btn text-white btn-signUp">SIGN UP</button></Link>
-                          </li>
-                        </React.Fragment>
-                      )
-                    ) : (
-                        null
-                      )
-                  }
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link"><button className="btn  btn-logIn border text-dark bg-white">LOG IN</button></Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/register" className="nav-link"><button className="btn text-white btn-signUp">SIGN UP</button></Link>
+                  </li>
 
-                  {
-                    this.state.data ? (
-                      (
-                        <React.Fragment>
-                          <li className="nav-item" onClick={this.handleLogout}>
-                            <Link to="#" className="nav-link"><button className="btn text-white btn-signOut">SIGN OUT</button></Link>
-                          </li>
-                        </React.Fragment>
-                      )
-                    ) : (
-                        null
-                      )
-                  }
+                  <li className="nav-item" onClick={this.handleLogout}>
+                    <Link to="#" className="nav-link"><button className="btn text-white btn-signOut">SIGN OUT</button></Link>
+                  </li> */}
 
-
+                  {Links}
 
                 </ul>
 

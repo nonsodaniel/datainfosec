@@ -77,7 +77,7 @@ export default class Staff extends Component {
                                             return (
                                                 <tr key={o._id}>
                                                     <td>{i + 1}</td>
-                                                    <td> <img className="staff-photo" src={o.staff_dp} alt=".." /> </td>
+                                                    <td> <img className="staff-photo rounded" src={o.staff_dp} alt=".." /> </td>
                                                     <td>{o.fullname}</td>
                                                     <td>{o.email}</td>
                                                     <td> <Moment fromNow>{o.dob}</Moment> </td>
