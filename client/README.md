@@ -32,3 +32,11 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 
+
+<h2>
+    1. Create a correct staff detail
+    2. Once created, it navigates to the newly created staff Profile board
+    3. To  view all staff, click on the Staff Nav Link
+</h2>
+
+

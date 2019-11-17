@@ -31,7 +31,7 @@ export default class Staff extends Component {
             this.setState({ admin: adminData.data.length ? adminData.data : null });
             $("#example").DataTable()
             let searchBox = document.querySelector("#example_filter");
-            let inputs = document.querySelector("input")
+            let inputs = document.querySelector("input");
             searchBox.style.float = "right";
             inputs.classList.add("form-control")
         })

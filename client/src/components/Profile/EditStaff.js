@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../layouts/assets/css/style.css'
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom'
 
 
 
@@ -8,7 +9,7 @@ export default class StaffDetails extends Component {
     state = {
         staff: [], isLoading: false,
         email: "", fullname: "",
-        dob: "", state: "", image: "",
+        dob: "", state: "", image: "", staff_dp: "",
         isUpdated: false
     }
 
@@ -23,8 +24,8 @@ export default class StaffDetails extends Component {
         }).then((staffData) => {
             console.log(this.props)
             let data = staffData.data
-            let { fullname, email, dob, state } = data
-            this.setState({ fullname, email, dob, state })
+            let { fullname, email, dob, state, staff_dp } = data
+            this.setState({ fullname, email, dob, state, staff_dp })
         })
         console.log()
     }
@@ -70,12 +71,21 @@ export default class StaffDetails extends Component {
             <React.Fragment>
                 <section className="login">
                     <div className="container login-container">
-                        <h2 className="text-center login-text">Edit Details</h2>
+                        <h2 className="text-center login-text">Edit Details / <Link to="/staff"><b className="text-primary">Go back to view all staff</b></Link></h2>
                         <form className="form mx-auto">
-                            <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.fullname : ""} id="fullname" placeholder="Fullname" onChange={this.handleChange} /><br />
-                            <input type="email" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.email : ""} id="email" placeholder="email" onChange={this.handleChange} /><br />
-                            <input type="date" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.dob : ""} id="dob" placeholder="Date of Birth" onChange={this.handleChange} /><br />
-                            <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.state : ""} id="state" placeholder="State of origin" onChange={this.handleChange} /><br />
+                            <img src={this.state ? this.state.staff_dp : ""} height="150" id="image-box" alt="" className="mb-4 border" />
+
+                            <label className="form-div-label">Fullname: <b className="label-important text-danger">*</b></label>
+                            <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.fullname : ""} id="fullname" placeholder="Fullname" onChange={this.handleChange} />
+
+                            <label className="form-div-label"> Email: <b className="label-important text-danger">*</b></label>
+                            <input type="email" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.email : ""} id="email" placeholder="email" onChange={this.handleChange} />
+
+                            <label className="form-div-label">Date of Birth <b className="label-important text-danger">*</b></label>
+                            <input type="date" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.dob : ""} id="dob" placeholder="Date of Birth" onChange={this.handleChange} />
+
+                            <label className="form-div-label">State of origin <b className="label-important text-danger">*</b></label>
+                            <input type="text" className="form-control mb-2 mr-sm-2 col-md-7 shadow-none " value={this.state ? this.state.state : ""} id="state" placeholder="State of origin" onChange={this.handleChange} />
                             <button className="col-md-7 btn btn-primary btn-login" onClick={this.handleSubmit}>Update</button><br />
                         </form>
 

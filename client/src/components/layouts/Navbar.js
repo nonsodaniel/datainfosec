@@ -21,7 +21,7 @@ class Navbar extends Component {
     e.preventDefault();
     console.log(this.props)
     localStorage.removeItem("staff")
-    this.props.history.push('/register')
+    this.props.history.push('/login')
   }
   render() {
     let localData = localStorage.getItem("staff");
