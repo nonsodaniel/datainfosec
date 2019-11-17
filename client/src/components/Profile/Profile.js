@@ -15,14 +15,13 @@ export default class Profile extends Component {
         }
     }
     render() {
-        // console.log("Wunmi", this.state.data)
         return (
             <>
                 <div className="container profile-container">
                     <div className="row">
                         <div className="col-md-4 left-div">
                             <div className="img-div mx-auto">
-                                <img src={this.state.data && this.state.data.staff_dp} alt="..." />
+                                <img className="mx-auto profile-image" src={this.state.data && this.state.data.staff_dp} alt="..." />
                             </div>
                             <h5 className="text-center">{this.state.data ? this.state.data.fullname : ""}</h5>
                             <h6 className="text-center">{this.state.data ? this.state.data.email : ""}</h6> <br />

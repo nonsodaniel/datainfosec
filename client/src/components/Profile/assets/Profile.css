@@ -29,7 +29,10 @@
     font-weight: 800;
     font-size: 17px;
 }
-
+.profile-image{
+    border-radius: 95px;
+    height: 30vh;
+}
 .bottom-right-div{
     margin-top: -22px;
     width: 85%;
