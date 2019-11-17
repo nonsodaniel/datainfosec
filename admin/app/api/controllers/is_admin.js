@@ -78,13 +78,7 @@ module.exports = {
             else res.json({ status: "Success", statuscode: 200, message: "Staff record updated successfully", data: result })
         })
     },
-    deleteById: (req, res, next) => {
-        console.log(req.body);
-        adminModel.findByIdAndDelete(req.params.adminId, (err, result) => {
-            if (err) throw err
-            else res.json({ status: "Success", statuscode: 200, message: "Admin has been successfully deleted", data: result })
-        })
-    },
+
     getById: async (req, res, next) => {
         await adminModel.findById(req.params.adminId, (err, result) => {
             console.log("One admin ()=>", result)
@@ -99,14 +93,8 @@ module.exports = {
             // console.log(result)
             if (err) throw err
             else
-                for (let admins of result) {
-                    adminList.push({
-                        id: admins._id,
-                        firstname: admins.firstname, othernames: admins.othernames,
-                        email: admins.email, phone: admins.phone, admin_dp: admins.admin_dp, date_created: admins.date_created
-                    })
-                }
-            res.json({ status: "Success", statuscode: 200, message: "All Admins found", data: result.reverse() })
+
+                res.json({ status: "Success", statuscode: 200, message: "All Admins found", data: result.reverse() })
         })
     },
     createImage: async (req, res, next) => {
