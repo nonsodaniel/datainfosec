@@ -7,9 +7,9 @@ export default class Profile extends Component {
     }
     componentDidMount() {
         let data = JSON.parse(localStorage.getItem("staff"))
-        console.log("real data", data)
+        // console.log("real data", data)
         this.setState({ data })
-        console.log("Profile state", this.props)
+        // console.log("Profile state", this.props)
         if (!data) {
             this.props.history.push('/login')
         }
@@ -40,11 +40,11 @@ export default class Profile extends Component {
                                 </ul>
                             </div>
                             <div className="bottom-right-div mx-auto">
-                                <h2 className="text-center profile-title-right"> A little about me</h2>
+                                <h2 className="text-center profile-title-right"> A little about me   <span className="">😊</span> </h2>
                                 <p className="profile-description">
                                     I am a dummy data! therefore, do not take whatever you see here as correct<br />
                                     This is just a basic demo I could come up with <br />
-                                    Browse through and Enjoy!
+                                    Browse through and Enjoy! <span className="text-danger">❤</span>
                                 </p>
                             </div>
                         </div>
