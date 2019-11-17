@@ -37,6 +37,9 @@ Your app is ready to be deployed!
     1. Create a correct staff detail <br />
     2. Once created, it navigates to the newly created staff Profile board <br />
     3. To  view all staff, click on the Staff Nav Link<br />
+    4. To  view a staff, click on the view button(with a Camera icon) on the staff Table<br />
+    5. To  edit a staff, click on the edit button(with a pen icon) on the staff Table<br />
+
 </h2>
 
 
