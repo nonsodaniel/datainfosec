@@ -75,6 +75,7 @@ module.exports = {
             fullname, email, state, dob
         }, (err, result) => {
             if (err) throw err
+
             else res.json({ status: "Success", statuscode: 200, message: "Staff record updated successfully", data: result })
         })
     },
@@ -93,7 +94,6 @@ module.exports = {
             // console.log(result)
             if (err) throw err
             else
-
                 res.json({ status: "Success", statuscode: 200, message: "All Admins found", data: result.reverse() })
         })
     },
