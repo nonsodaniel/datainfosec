@@ -16,6 +16,9 @@ nav{
     padding: 0px 25px;
     margin: -4px 0 0 0;
 }
+.navbar-nav{
+    margin-left: 180px;
+}
 .logo{
     /* border: 1px solid red; */
     height: 40px;
@@ -158,9 +161,10 @@ input{
    .list-container{
     margin: 0px;
 }
-.btn-logIn, .btn-signUp{
+.btn-logIn, .btn-signUp, .btn-signOut{
     width: 40%;
 }
+
 .logo{
     width: 45vw;
     transform: translateX(-28px);
@@ -171,6 +175,9 @@ input{
     /* margin: 2vh; */
     margin-top: 4px;
     font-weight: 800;
+}
+.navbar-nav{
+    margin: 0
 }
 
 }

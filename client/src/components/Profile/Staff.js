@@ -54,47 +54,50 @@ export default class Staff extends Component {
                 <div className="main-content-container container-fluid px-4" style={{ background: "white" }}>
                     <div className="card-body" style={{ background: "white" }}>
                         <Link to="/register"><button className="btn btn-primary add-staff-btn">Add Staff</button></Link>
-                        <table id="example" className="table table-striped table-bordered table-hover" width="100%" >
-                            <thead>
-                                <tr>
-                                    <th>S/n</th>
-                                    <th> Photo</th>
-                                    <th> Name</th>
-                                    <th>Email</th>
-                                    <th>Birth Date</th>
-                                    <th>State of Origin</th>
-                                    <th>Date Created</th>
-                                    <th>View</th>
-                                    <th>Edit</th>
-                                </tr>
-                            </thead>
+                        <div className="table-responsive">
 
-                            <tbody>
-                                {
-                                    adminData ? (
-                                        adminData.map((o, i) => {
-                                            console.log("my data", o, i, o.fullname);
-                                            return (
-                                                <tr key={o._id}>
-                                                    <td>{i + 1}</td>
-                                                    <td> <img className="staff-photo rounded" src={o.staff_dp} alt=".." /> </td>
-                                                    <td>{o.fullname}</td>
-                                                    <td>{o.email}</td>
-                                                    <td> <Moment fromNow>{o.dob}</Moment> </td>
-                                                    <td>{o.state}</td>
-                                                    <td><Moment fromNow>{o.createdAt}</Moment></td>
-                                                    <td><button className="btn btn-info btn-xs action-btn" onClick={this.handleView} id={o._id}><i className="material-icons" id={o._id} style={{ left: "-6px", fontSize: "13px" }}>local_see</i></button></td>
-                                                    <td><button className="btn btn-primary btn-xs action-btn" onClick={this.handleEdit} id={o._id}><i className="material-icons" id={o._id} style={{ left: "-6px", fontSize: "13px" }}>mode_edit</i></button></td>
-                                                </tr>
+                            <table id="example" className="table table-striped table-bordered table-hover" width="100%" >
+                                <thead>
+                                    <tr>
+                                        <th>S/n</th>
+                                        <th> Photo</th>
+                                        <th> Name</th>
+                                        <th>Email</th>
+                                        <th>Birth Date</th>
+                                        <th>State of Origin</th>
+                                        <th>Date Created</th>
+                                        <th>View</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {
+                                        adminData ? (
+                                            adminData.map((o, i) => {
+                                                console.log("my data", o, i, o.fullname);
+                                                return (
+                                                    <tr key={o._id}>
+                                                        <td>{i + 1}</td>
+                                                        <td> <img className="staff-photo rounded" src={o.staff_dp} alt=".." /> </td>
+                                                        <td>{o.fullname}</td>
+                                                        <td>{o.email}</td>
+                                                        <td> <Moment fromNow>{o.dob}</Moment> </td>
+                                                        <td>{o.state}</td>
+                                                        <td><Moment fromNow>{o.createdAt}</Moment></td>
+                                                        <td><button className="btn btn-info btn-xs action-btn" onClick={this.handleView} id={o._id}><i className="material-icons" id={o._id} style={{ left: "-6px", fontSize: "13px" }}>local_see</i></button></td>
+                                                        <td><button className="btn btn-primary btn-xs action-btn" onClick={this.handleEdit} id={o._id}><i className="material-icons" id={o._id} style={{ left: "-6px", fontSize: "13px" }}>mode_edit</i></button></td>
+                                                    </tr>
+                                                )
+                                            })
+                                        ) : (
+                                                <div>No data to show</div>
                                             )
-                                        })
-                                    ) : (
-                                            <div>No data to show</div>
-                                        )
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div> </div>
                 </div>
 
             </div>

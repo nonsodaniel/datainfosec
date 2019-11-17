@@ -34,35 +34,36 @@ class Navbar extends Component {
           <nav className="navbar navbar-expand-lg navbar-light bg-white">
             <Link to="/" className="navbar-brand">
               <div className="logo">
-
-              </div>
+                The navbar place
+            </div>
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <div className="list-container">
 
                 <ul className="navbar-nav">
-                  {/* <li className="nav-item">
-                    <Link to="/" className="nav-link">Profile</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/staff" className="nav-link">Staff</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/login" className="nav-link"><button className="btn  btn-logIn border text-dark bg-white">LOG IN</button></Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/register" className="nav-link"><button className="btn text-white btn-signUp">SIGN UP</button></Link>
-                  </li>
-
-                  <li className="nav-item" onClick={this.handleLogout}>
-                    <Link to="#" className="nav-link"><button className="btn text-white btn-signOut">SIGN OUT</button></Link>
-                  </li> */}
-
                   {Links}
+                  {/* <li className="nav-item">
+                    <Link to="/" className="nav-link">Home</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">About Us</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">Shopper</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">Contact Us</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link"><button className="btn  btn-logIn border text-dark bg-white">LOG IN</button></Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link"><button className="btn text-white btn-signUp">SIGN UP</button></Link>
+                  </li> */}
 
                 </ul>
 
