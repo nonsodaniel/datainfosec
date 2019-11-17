@@ -47,7 +47,7 @@ export default class Signup extends Component {
                 if (response.statuscode === 200) {
                     localStorage.setItem("staff", JSON.stringify(response.data))
                     swal("Response", "Successfully Created a Staff", "success");
-                    setTimeout(this.props.history.push('/staff'), 2000)
+                    setTimeout(this.props.history.push('/'), 2000)
                     this.setState({ isLoading: false })
                 } else {
                     this.setState({ isLoading: false })

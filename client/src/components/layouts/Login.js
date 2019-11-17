@@ -41,7 +41,7 @@ export default class Login extends Component {
                 if (response.statuscode === 200) {
                     localStorage.setItem("staff", JSON.stringify(response.data))
                     swal("Response", "Login Successful", "success");
-                    setTimeout(this.props.history.push('/staff'), 2000)
+                    setTimeout(this.props.history.push('/'), 2000)
                 } else if (response.statuscode === 404) {
                     this.setState({ isLoading: false })
                     return swal("Response", `The Email does not exist! Please recheck and try again`, "failed")
